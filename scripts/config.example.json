@@ -1,0 +1,33 @@
+{
+  "reject_title_regex": "\\b(senior|sr\\.?|lead|principal|staff|head of|manager|director)\\b",
+  "reject_description_regex": [
+    {"pattern": "\\b[5-9]\\s*\\+\\s*(years|yrs)|\\bminimum (of )?[5-9]\\s*(years|yrs)", "reason": "5+ years required"},
+    {"pattern": "fluent (in )?(german|dutch)|(german|dutch) (is )?(required|mandatory)", "reason": "local language required", "sections": ["C"]}
+  ],
+  "flag_patterns": {
+    "CODING-TEST": "coding test|technical assessment|live coding|hackerrank|codility"
+  },
+  "sections": [
+    {
+      "id": "A", "name": "Local on-site or hybrid",
+      "terms": ["junior software developer", "support engineer"],
+      "locations": [
+        {"name": "Example City, Country", "country": "usa"},
+        {"name": "Big Capital, Country", "country": "usa", "remote_only": true}
+      ],
+      "sites": ["linkedin", "indeed"], "results": 20, "fetch_description": false
+    },
+    {
+      "id": "B", "name": "Remote, worldwide",
+      "terms": ["automation specialist", "technical support"],
+      "locations": [{"name": "Worldwide"}, {"name": "Europe"}],
+      "sites": ["linkedin"], "append_remote": true, "require_remote": true, "results": 20
+    },
+    {
+      "id": "C", "name": "Relocation / visa sponsorship",
+      "terms": ["graduate engineer visa sponsorship"],
+      "locations": [{"name": "Germany", "country": "germany"}, {"name": "Ireland", "country": "ireland"}],
+      "sites": ["linkedin", "indeed"], "results": 15, "fetch_description": true, "sponsor_tags": true
+    }
+  ]
+}

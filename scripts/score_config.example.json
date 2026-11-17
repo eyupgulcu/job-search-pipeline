@@ -1,0 +1,32 @@
+{
+  "tracks": [
+    {
+      "name": "Software",
+      "match": "software|developer|full ?stack|backend|frontend",
+      "domain": "software|developer",
+      "plus": "\\bai\\b|automation|api",
+      "entry_level": "junior|graduate|entry|trainee",
+      "seniorish": "\\b(ii|iii)\\b|specialist"
+    },
+    {
+      "name": "Engineering",
+      "match": "electrical|embedded|hardware|plc|engineer",
+      "domain": "electrical|embedded|hardware",
+      "plus": "test|automation|commissioning",
+      "entry_level": "junior|graduate|trainee"
+    }
+  ],
+  "negatives": [
+    {"pattern": "technician|intern\\b|internship", "points": -4},
+    {"pattern": "manager|director", "points": -3},
+    {"pattern": "secret clearance|principal", "points": -8}
+  ],
+  "preferred_employers": "example corp|sample industries",
+  "company_penalties": [
+    {"company_regex": "strict employer", "points": -4, "note": "requires a credential I do not hold"}
+  ],
+  "location_bonus": {"example city": 1},
+  "tag_points": {"[SPONSOR]": 2, "[CODING-TEST]": -1},
+  "section_points": {"B": 1},
+  "summary_min_score": 3.0
+}
